@@ -26,7 +26,8 @@ jobs:
 
     # Step 3: Install dependencies
     - name: Install dependencies
-      run: go mod tidy
+      run: |
+        go mod tidy
 
     # Step 4: Run tests
     - name: Run tests
