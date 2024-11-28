@@ -34,4 +34,4 @@ jobs:
 
     # Step 5: Build the application
     - name: Build the application
-      run: go build -o my-go-app ./cmd
+      run: go build -o my-go-app .
