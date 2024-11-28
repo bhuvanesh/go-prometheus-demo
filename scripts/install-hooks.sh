@@ -44,28 +44,4 @@ EOF
 
 chmod +x .git/hooks/prepare-commit-msg
 
-# Optional: Copy pre-push hook for branch naming convention
-cat > .git/hooks/pre-push << 'EOF'
-#!/bin/bash
-
-# Regular expression for branch naming convention
-BRANCH_REGEX="^(feature|bugfix|hotfix|release)/[a-z0-9-]+$"
-
-# Get current branch name
-BRANCH_NAME=$(git symbolic-ref --short HEAD)
-
-if ! [[ $BRANCH_NAME =~ $BRANCH_REGEX ]]; then
-    echo "ERROR: Branch name '$BRANCH_NAME' does not follow the convention:"
-    echo "  feature/feature-name"
-    echo "  bugfix/bug-description"
-    echo "  hotfix/issue-description"
-    echo "  release/version-number"
-    exit 1
-fi
-
-exit 0
-EOF
-
-chmod +x .git/hooks/pre-push
-
 echo -e "${GREEN}Git hooks installed successfully${NC}"
