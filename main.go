@@ -74,6 +74,7 @@ func doubleHandler(w http.ResponseWriter, r *http.Request) {
 	// result := num * 2
 	// w.WriteHeader(http.StatusOK)
 	// w.Write([]byte(fmt.Sprintf("%d doubled is %d", num, result)))
+
 }
 
 func main() {
